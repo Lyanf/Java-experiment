@@ -19,7 +19,7 @@ abstract public class Employee {
     }
 }
 /****************/
-class Worker extends Employee{
+class Worker extends Em1ployee{
     char category;
     boolean dressAllowance;
     Worker(String en,char s,double es,char c,boolean d){
