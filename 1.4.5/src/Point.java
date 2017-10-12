@@ -4,11 +4,13 @@ public class Point{
     private Color mycolor;
     public Point(){
         x=y=0;
-        mycolor=new Color(255,255,255);
+        mycolor=new Color(2,3,255);
     }
     public Point(int i_x,int i_y){
         x=i_x;
         y=i_y;
+        mycolor=new Color(2,3,255);
+
     }
     public Point(int i_x,int i_y,Color i_mycolor){
         x=i_x;
@@ -43,7 +45,7 @@ public class Point{
         else return false;
     }
     public String toString(){
-        return String.format("x:%d  y:%d  color%s",x,y,mycolor);
+        return String.format("x:%d  y:%d  color%s",x,y,getColor().toString());
     }
     public static void main(String[] args){
         Point A=new Point();
@@ -55,5 +57,6 @@ public class Point{
         A.setColor(Color.red);
         System.out.println("A==B?"+A.equals(B));
         System.out.println("A---B"+A.distance(B));
+
     }
 }
