@@ -1,4 +1,5 @@
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -44,6 +45,8 @@ public class Matrix {
             return true;
         } else return false;
     }
+	public int getx(){return x;}
+	public int gety(){return y;}
 
     public boolean setArray(float i_data[][]) {
         if (i_data.length > 0 && i_data[0].length > 0) {
@@ -99,7 +102,7 @@ public class Matrix {
         //首先,系统的那个数组类型,euqals是直接用的object.euqlas(),这个可以从调试中看到
         //查了stack overflow,Arrays.equals只能判断一维数组,然后说ArrayUtil.isEuqal可以用多维
         //发现并不能,查到ArrayUtil官方文档,发现现在那个method被删除了,现在是deepEquals,发现调用的还是Arrays.deepEquals()
-        if (obj2.x == this.x && obj2.y == this.y && Objects.deepEquals(this.data, obj2.data))
+        if (obj2.x == this.x && obj2.y == this.y && Arrays.deepEquals(this.data,obj2.data))
             return true;
         return false;
 
