@@ -1,4 +1,4 @@
-abstract public class Employee {
+abstract public class Employee {     //这是一个抽象类,其中由一个抽象方法
     String EmpName;
     char sex;
     double EmpSal;
@@ -19,9 +19,9 @@ abstract public class Employee {
     }
 }
 /****************/
-class Worker extends Em1ployee{
-    char category;
-    boolean dressAllowance;
+class Worker extends Employee{
+    char category;           //这个属性是指种类
+    boolean dressAllowance;     //服装津贴
     Worker(String en,char s,double es,char c,boolean d){
         super(en,s,es);
         category=c;
@@ -34,16 +34,16 @@ class Worker extends Em1ployee{
         return dressAllowance;
     }
     public double getSal(){
-        return EmpSal;
+        return EmpSal;      //获取薪酬,这个是从上面继承下来的
     }
 
 }
 
 /***********/
-class Superior extends  Employee{
-    int experience;
-    boolean vehicle;
-    double medicalAllowance;
+class Superior extends  Employee{   //同样继承于employee
+    int experience;     //工作经验
+    boolean vehicle;    //交通工具
+    double medicalAllowance;    //医疗津贴
     Superior(String en,char s,double es,int e,boolean v,double ma){
         super(en,s,es);
         experience=e;
@@ -61,12 +61,12 @@ class Superior extends  Employee{
     }
     public double getSal(){
         return EmpSal*4+1000+medicalAllowance;
-    }
+    }   //获取总薪酬
 }
 
 /***************/
 class Officer extends  Superior{
-    double travelAllowance;
+    double travelAllowance; //继承自Superior,多家了一个出差津贴
     Officer(String en,char s,double es,int e,boolean v,double ma,double ta){
         super(en,s,es,e,v,ma);
         travelAllowance=ta;
@@ -82,7 +82,7 @@ class Officer extends  Superior{
 
 /************/
 class Manager extends  Superior{
-    double clubAllowance;
+    double clubAllowance;   //多了一个健身津贴
     Manager(String en,char s,double es,int e,boolean v,double ma,double ca){
         super(en,s,es,e,v,ma);
         clubAllowance=ca;

@@ -24,6 +24,7 @@ public class MyComplex{
         a=i_a;
         b=i_b;
     }
+
     static public MyComplex add(MyComplex x,MyComplex y){
         return new MyComplex(x.a+y.a,x.b+y.b);
     }

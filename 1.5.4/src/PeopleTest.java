@@ -1,5 +1,5 @@
-class People{
-    protected double weight,height;
+class People{       //不论哪国人,你都是一个人类,所以这是一个基类
+    protected double weight,height; //子类继承,外部不可见
     public void speakHello(){
         System.out.println("who am i?");
 
@@ -58,7 +58,7 @@ class AmericanPeople extends People{
     }
 }
 
-class BeijingPeople extends ChinaPeople{
+class BeijingPeople extends ChinaPeople{    //北京人也是中国人,所以可以继承自中国人,一些中国人的属性和方法他也可以用,这里覆盖了一个方法
     @Override
     public void speakHello() {
         System.out.println("你好,我是北京人");

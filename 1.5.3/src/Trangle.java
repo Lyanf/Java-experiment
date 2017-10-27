@@ -1,8 +1,8 @@
-package www.horsefly;
+package www.horsefly;   //以为着这个文件是属于这个包的
 public class Trangle {
     double sideA,sideB,sideC;
-    boolean flag;
-    public Trangle(double a,double b,double c){
+    boolean flag;       //确定是否是一个三角形的属性,这个由构造函数进行赋值
+    public Trangle(double a,double b,double c){     //构造函数
         sideA=a;
         sideB=b;
         sideC=c;
@@ -15,7 +15,7 @@ public class Trangle {
             flag=false;
         }
     }
-    public void jsmj(){
+    public void jsmj(){         //计算面积
         if (flag){
             double p=(sideA+sideB+sideC)/2.0;
             double area=Math.sqrt(p*(p-sideA)*(p-sideB)*(p-sideC));
