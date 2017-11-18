@@ -5,8 +5,10 @@ class CalendarTest{
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(new Date());
         String year = String.valueOf(calendar.get(Calendar.YEAR)),
+                //月从0开始
                 month = String.valueOf(calendar.get(Calendar.MONTH)+1),
                 day = String.valueOf(calendar.get(Calendar.DAY_OF_MONTH)),
+                //从星期日开始算为1
                 weekday = String.valueOf(calendar.get(Calendar.DAY_OF_WEEK)-1);
         int hour = calendar.get(Calendar.HOUR_OF_DAY),
                 minute = calendar.get(Calendar.MINUTE),

@@ -1,5 +1,6 @@
 class myexception extends Exception{
     String mymsg="我的异常信息";
+    //经过查看源码,这个super调用的其实是Throwable类里面的构造函数,修改的里面一个属性
     myexception(){
         super("我自己定义的异常");
     }

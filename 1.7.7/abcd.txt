@@ -1,0 +1,23 @@
+1:        import java.io.*;
+2:        
+3:        public class ByteStreamTest {
+4:            public static void main(String[]args) throws IOException{
+5:                FileOutputStream out1 = new FileOutputStream("data.txt");
+6:                BufferedOutputStream out2 = new BufferedOutputStream(out1);
+7:                DataOutputStream out = new DataOutputStream(out2);
+8:                out.writeByte(-12);
+9:                out.writeLong(12);
+10:                out.writeChar('A');
+11:                out.writeUTF("中国");
+12:                out.close();
+13:                InputStream in1 = new FileInputStream("data.txt");
+14:                BufferedInputStream in2 = new BufferedInputStream(in1);
+15:                DataInputStream in = new DataInputStream(in2);
+16:                System.out.println(in.readByte());
+17:                System.out.println(in.readLong());
+18:                System.out.println(in.readChar());
+19:                System.out.println(in.readUTF());
+20:                in.close();
+21:        
+22:            }
+23:        }

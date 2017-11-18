@@ -5,6 +5,7 @@ public class Program {
     public Program(){
         try{
             System.out.println(name);
+            //这里如果把no2改成了0,那么就会throw一个异常
             System.out.println("相除结果为:"+no1/no2);
         }
         //算术错误

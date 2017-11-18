@@ -9,12 +9,32 @@ public class StringExample {
         if (s3.startsWith("620102")) {
             System.out.println("甘肃省的身份证");
         }
-        String temp = "" + 123;
-
+        String s4 = new String("你"),
+                s5 = new String("我");
+        if (s4.compareTo(s5)>=0?true:false){
+            System.out.println("按字典序s4大于s5");
+        }
+        else{
+            System.out.println("按字典序s4小于s5");
+        }
+        int position = 0;
+        String path = "d:\\shiyan\\src\\shiyan3\\People.java";
+        position = path.lastIndexOf("\\");
+        System.out.println("d:\\shiyan\\src\\shiyan3\\People.java");
+        String fileName = path.substring(position+1,path.length());
+        System.out.println("c:\\java\\jsp\\A.java中含有的文件名:"+fileName);
+        String s6 = new String("100"),
+                s7 = new String("123.678");
+        int n1 = Integer.parseInt(s6);
+        double n2 = Double.parseDouble(s7);
+        double n  = n1+n2;
+        System.out.println(n);
+        String s8 = new String("ABCDEF");
+        char a[] = s8.toCharArray();
+        for (int i = a.length - 1;i >= 0;i--)
+        {
+            System.out.printf("%3c",a[i]);
+        }
     }
 
-    public String toString() {
-        return "" + 123 + "123";
-
-    }
 }
