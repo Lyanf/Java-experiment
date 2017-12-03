@@ -1,9 +1,6 @@
 
 import java.io.*;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 public class Matrix {
     public static void main(String[] args) {
@@ -18,6 +15,16 @@ public class Matrix {
         obj.write("test2.txt");
         Matrix readtest = new Matrix("test2.txt");
         System.out.println(readtest.toString());
+        try{
+            System.out.println(obj.jia(obj));
+            System.out.println(obj.jian(obj));
+            System.out.println(obj.cheng(obj));
+        }
+        catch (Exception e){
+            System.out.println(e);
+        }
+        String a="中国";
+        System.out.println(a.getBytes().length);
     }
 
     int x, y;
@@ -120,9 +127,9 @@ public class Matrix {
             xyarray = xy.split(" ");
             int row = Integer.parseInt(xyarray[0]);
             int column = Integer.parseInt(xyarray[1]);
-            data = new float [row][column];
-            x=row;
-            y=column;
+            data = new float[row][column];
+            x = row;
+            y = column;
             float[][] temp = new float[row][column];
             for (int i = 0; i < row; i++) {
                 String thisRow = bufferedReader.readLine();
@@ -161,4 +168,49 @@ public class Matrix {
 
 
     }
+
+    public Matrix jia(Matrix another) throws Exception {
+        Matrix m = new Matrix(x, y);
+        if (this.y != another.y || this.x != another.y) {
+            throw new Exception("矩阵大小不同，不能相加！");
+        } else {
+            for (int i = 0; i < m.x; i++) {
+                for (int j = 0; j < m.y; j++) {
+                    m.data[i][j] = this.data[i][j] + another.data[i][j];
+                }
+            }
+        }
+        return m;
+    }
+
+    public Matrix jian(Matrix another) throws Exception {
+        Matrix m = new Matrix(x, y);
+        if (this.x != another.x || this.y != another.y) {
+            throw new Exception("矩阵大小不同，不能相减！");
+        } else {
+            for (int i = 0; i < m.x; i++) {
+                for (int j = 0; j < m.y; j++) {
+                    m.data[i][j] = this.data[i][j] - another.data[i][j];
+                }
+            }
+        }
+        return m;
+    }
+
+    public Matrix cheng(Matrix another) throws Exception {
+        Matrix m = new Matrix(x, another.y);
+        if (this.x != another.y) {
+            throw new Exception("第一个矩阵的列数和第二个矩阵行数不相同，不能相乘！");
+        } else {
+            for (int i = 0; i < this.x; i++) {
+                for (int j = 0; j < another.y; j++) {
+                    for (int k = 0; k < this.y; k++) {
+                        m.data[i][j] += this.data[i][k] * another.data[k][i];
+                    }
+                }
+            }
+        }
+        return m;
+    }
+
 }

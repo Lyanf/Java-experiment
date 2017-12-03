@@ -2,13 +2,14 @@ import java.io.*;
 
 public class ByteStreamTest {
     public static void main(String[]args) throws IOException{
+        //文件输出流
         FileOutputStream out1 = new FileOutputStream("data.txt");
         BufferedOutputStream out2 = new BufferedOutputStream(out1);
         DataOutputStream out = new DataOutputStream(out2);
-        out.writeByte(-12);
-        out.writeLong(12);
-        out.writeChar('A');
-        out.writeUTF("中国");
+        out.writeByte(-12); //1
+        out.writeLong(12); //8
+        out.writeChar('A');//2
+        out.writeUTF("中国");//6+2 = 8
         out.close();
         InputStream in1 = new FileInputStream("data.txt");
         BufferedInputStream in2 = new BufferedInputStream(in1);

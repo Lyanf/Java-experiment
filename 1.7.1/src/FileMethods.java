@@ -10,6 +10,7 @@ public class FileMethods {
         }
         File f1 = new File(args[0]);
         System.out.println("文件名"+f1.getName());
+//        如果这里创建的时候用的是相对路径,那么久getPath返回的是相对路径,如果是绝对路径,也对应绝对路径
         System.out.println("文件路径"+f1.getPath());
         System.out.println("文件的绝对路径"+f1.getAbsolutePath());
         System.out.println(f1.exists()?"文件存在":"文件不存在");

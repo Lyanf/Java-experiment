@@ -29,7 +29,7 @@ public class ObjectSaver {
     }
 }
 
-
+//必须要实现这个借口才能说我是可以用objectwrite写进去
 class Student implements Serializable {
     private String name;
     private int age;

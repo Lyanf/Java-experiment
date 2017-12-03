@@ -11,6 +11,7 @@ public class SecretExample{
             while ((n=in.read(b))!=-1)
             {
                 for (int i=0;i<n;i++){
+                    //这是一个异或
                     b[i] = (byte)(b[i]^'a');
                 }
                 out.write(b,0,n);
