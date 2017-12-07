@@ -13,6 +13,7 @@ class WindowCloser extends WindowAdapter {
 }
 public class ColorChanger extends Frame {
     private Color color = Color.RED;
+    //点了多少次
     private int times;
     public ColorChanger(String title){
         super(title);
@@ -21,6 +22,7 @@ public class ColorChanger extends Frame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 color = (color == Color.RED)?Color.GREEN:Color.RED;
+                //repaint()会call paint()和update()两个方法，所以重写了这两个方法
                 repaint();
             }
         });

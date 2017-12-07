@@ -21,13 +21,14 @@ public class CaculaterGUI extends Frame {
         label = new Label();
         panel = new Panel();
         panel.setLayout(new GridLayout(4,4));
+        //这是一个空的label，那么就是默认的一个空字符串，以及相左对齐
         add(label,BorderLayout.NORTH);
         add(panel,BorderLayout.CENTER);
         for (int i = 0; i < buttons.length; i++){
             buttons[i] = new Button(names[i]);
             panel.add(buttons[i]);
         }
-        pack();
+        pack();//让frame能够适应他的子组件的大小
         setVisible(true);
         addWindowListener(new WindowCloser());
     }
