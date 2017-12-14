@@ -35,7 +35,6 @@ class MyCanvas extends Canvas {
             for (i= 0; i<3600;i++){
 //                g.drawOval((int)(i*3.14/180.0/10),(int)(250+250*Math.cos((double)i/10*3.14/180.0)),1,1);
                 g.drawOval((int)(i/10.0),(int)(250-250*Math.cos(i/10.0/180.0*Math.PI)),1,1);
-
             }
         }
 
