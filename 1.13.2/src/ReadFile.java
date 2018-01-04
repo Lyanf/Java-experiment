@@ -39,7 +39,7 @@ public class ReadFile extends JApplet implements ActionListener,Runnable{
         try{
             thread.start();
         }
-        catch (Exception e ){
+        catch (Exception d ){
 
         }
     }

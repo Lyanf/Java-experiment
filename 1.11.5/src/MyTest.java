@@ -29,7 +29,7 @@ class MyPanel extends JPanel {
         g.drawLine(0, 100, x + 100, 100);
         g.drawLine(100, 0, 100, y + 100);
         try {
-            g.drawImage(imageIcon[this.i], picx, picy, 50, 50, null);
+            g.drawImage(imageIcon[this.i], picx, picy, 100, 100, null);
         } catch (Exception e) {
         }
     }
@@ -50,6 +50,7 @@ public class MyTest extends JFrame {
 
     public static void main(String[] args) {
         MyTest myTest = new MyTest();
+        myTest.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
     }
 
@@ -113,5 +114,3 @@ public class MyTest extends JFrame {
         }
     }
 }
-
-

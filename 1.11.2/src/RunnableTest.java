@@ -29,22 +29,24 @@ public class RunnableTest extends JFrame implements Runnable {
         while(true){
             try{
                 Thread.sleep((int)(Math.random()*3000));
+
             }
             catch (InterruptedException e ){
-                currentRunning = Thread.currentThread().getName();
-                if (currentRunning.equals("FirstThread")) {
-                    count1++;
-                    threadFirst.setText("线程1第"+count1+"次被调度");
-                } else if (currentRunning.equals("SecondThread")) {
-                    count2++;
-                    threadSecond.setText("线程2第"+count2+"次被调度");
-                }
+
+            }
+            currentRunning = Thread.currentThread().getName();
+            if (currentRunning.equals("FirstThread")) {
+                count1++;
+                threadFirst.setText("线程1第"+count1+"次被调度");
+            } else if (currentRunning.equals("SecondThread")) {
+                count2++;
+                threadSecond.setText("线程2第"+count2+"次被调度");
             }
         }
     }
     public static void main(String[]args){
         RunnableTest myapp = new RunnableTest();
-        myapp.setSize(300,100);
+        myapp.setSize(300,200);
         myapp.setVisible(true);
         myapp.start();
         myapp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
